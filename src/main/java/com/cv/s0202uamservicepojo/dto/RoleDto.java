@@ -21,4 +21,9 @@ public class RoleDto extends GenericDto implements Serializable {
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
     private Integer permission;
+
+    @NotBlank(message = "${app.code.002}")
+    @NotNull(message = "${app.code.003}")
+    @Size(min = 3, max = 250, message = "${app.code.005}")
+    private Integer roleType;
 }
