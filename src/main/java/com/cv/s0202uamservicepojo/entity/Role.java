@@ -25,4 +25,10 @@ public class Role extends GenericEntity implements Serializable {
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Column
     private Integer permission;
+
+    @NotBlank(message = "${app.code.002}")
+    @NotNull(message = "${app.code.003}")
+    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @Column
+    private Integer roleType;
 }
