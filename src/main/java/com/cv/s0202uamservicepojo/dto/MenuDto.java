@@ -56,6 +56,8 @@ public class MenuDto extends GenericDto implements Comparable<MenuDto>, Serializ
     @JsonProperty("submenu")
     private List<MenuDto> subMenuDtos = new ArrayList<>(0);
 
+    private List<RoleDto> roleList = new ArrayList<>(0);
+
 
     @Override
     public int compareTo(MenuDto o) {
