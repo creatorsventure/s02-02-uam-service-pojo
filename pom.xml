@@ -32,7 +32,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <org.projectlombok.version>1.18.36</org.projectlombok.version>
-        <core-service-version>0.0.1-SNAPSHOT</core-service-version>
+        <core-service-version>0.0.3-SNAPSHOT</core-service-version>
     </properties>
     <repositories>
         <repository>
