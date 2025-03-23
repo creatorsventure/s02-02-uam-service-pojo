@@ -1,8 +1,7 @@
 package com.cv.s0202uamservicepojo.entity;
 
 import com.cv.s01coreservice.entity.generic.GenericEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -31,7 +30,11 @@ public class Password extends GenericEntity implements Serializable {
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Column
-    private String encrPassword;
+    private String encryptedPassword;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_detail_id" , referencedColumnName = "id")
+    private UserDetail userDetail;
 
 
 }
