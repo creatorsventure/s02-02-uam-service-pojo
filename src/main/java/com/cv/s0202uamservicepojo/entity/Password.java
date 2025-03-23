@@ -25,13 +25,13 @@ public class Password extends GenericEntity implements Serializable {
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Column
-    private String password;
+    private String hashPassword;
 
     @NotBlank(message = "${app.code.002}")
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Column
-    private String oldPassword;
+    private String encrPassword;
 
 
 }
