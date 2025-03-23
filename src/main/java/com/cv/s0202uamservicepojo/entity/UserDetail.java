@@ -9,9 +9,11 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.proxy.HibernateProxy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
@@ -40,6 +42,19 @@ public class UserDetail extends GenericEntity implements Serializable {
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Column(unique = true)
     private String email;
+
+    @NotBlank(message = "${app.code.002}")
+    @NotNull(message = "${app.code.003}")
+    @Size(min = 3, max = 20, message = "${app.code.005}")
+    @Column(unique = true)
+    private String userName;
+
+    @Column
+    private LocalDateTime lastLogin;
+
+    @NotNull(message = "${app.code.003}")
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+    private Integer failedLoginAttempts = 0;
 
     @Override
     public final boolean equals(Object o) {
