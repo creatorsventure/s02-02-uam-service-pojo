@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.cv</groupId>
     <artifactId>s02-02-uam-service-pojo</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
     <name>s02-02-uam-service-pojo</name>
     <description>s02-02-uam-service-pojo</description>
     <url/>
