@@ -59,6 +59,10 @@ public class Menu extends GenericEntity implements Serializable {
     @Column
     private Integer menuType;
 
+    @NotNull(message = "${app.code.003}")
+    @Column
+    private Integer menuOwner;
+
     @ManyToMany(mappedBy = "menuList")
     private List<Role> roleList = new ArrayList<>(0);
 
