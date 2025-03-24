@@ -5,6 +5,11 @@ config/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+## User ##
+config/db
+config/log
+.DS_Store
+
 ### STS ###
 .apt_generated
 .classpath

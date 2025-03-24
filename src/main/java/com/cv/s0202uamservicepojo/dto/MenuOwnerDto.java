@@ -1,6 +1,5 @@
 package com.cv.s0202uamservicepojo.dto;
 
-
 import com.cv.s01coreservice.dto.generic.GenericDto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,8 +8,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -18,13 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 @ToString(callSuper = true)
-public class PermissionDto extends GenericDto implements Serializable {
+public class MenuOwnerDto extends GenericDto implements Serializable {
 
     @NotBlank(message = "${app.code.002}")
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
-    private String permissionCode;
+    private String ownerCode;
 
-    private List<RoleDto> roleDtoList = new ArrayList<>(0);
 
 }

@@ -33,10 +33,23 @@ public class Role extends GenericEntity implements Serializable {
     @Column
     private Integer roleType;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "menu_owner_id", referencedColumnName = "id")
+    private MenuOwner menuOwner;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "role_permission_mapping",
+            joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "permission_id", referencedColumnName = "id")
+    )
+    private List<Permission> permissionList = new ArrayList<>(0);
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "role_menu_mapping",
             joinColumns = @JoinColumn(name = "menu_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
     private List<Menu> menuList = new ArrayList<>(0);
+
+
 }

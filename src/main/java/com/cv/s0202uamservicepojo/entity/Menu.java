@@ -1,9 +1,7 @@
 package com.cv.s0202uamservicepojo.entity;
 
 import com.cv.s01coreservice.entity.generic.GenericEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -49,7 +47,7 @@ public class Menu extends GenericEntity implements Serializable {
 
     @NotNull(message = "${app.code.003}")
     @Column
-    private Integer rootMenuId;
+    private String rootMenuId;
 
     @NotNull(message = "${app.code.003}")
     @Column
@@ -60,8 +58,9 @@ public class Menu extends GenericEntity implements Serializable {
     private Integer menuType;
 
     @NotNull(message = "${app.code.003}")
-    @Column
-    private Integer menuOwner;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "menu_owner_id", referencedColumnName = "id")
+    private MenuOwner menuOwner;
 
     @ManyToMany(mappedBy = "menuList")
     private List<Role> roleList = new ArrayList<>(0);
