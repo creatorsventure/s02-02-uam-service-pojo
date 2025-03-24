@@ -29,10 +29,10 @@ public class Service extends GenericEntity implements Serializable {
     @Column(unique = true)
     private String serviceCode;
 
-    @OneToMany(mappedBy = "menuOwner")
+    @OneToMany(mappedBy = "service")
     private List<Menu> menuList = new ArrayList<>(0);
 
-    @OneToMany(mappedBy = "menuOwner")
+    @OneToMany(mappedBy = "service")
     private List<Role> roleList;
 
 
