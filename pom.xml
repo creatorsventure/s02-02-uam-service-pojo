@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.cv</groupId>
     <artifactId>s02-02-uam-service-pojo</artifactId>
-    <version>0.0.13-SNAPSHOT</version>
+    <version>0.0.17-SNAPSHOT</version>
     <name>s02-02-uam-service-pojo</name>
     <description>s02-02-uam-service-pojo</description>
     <url/>
@@ -32,11 +32,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <org.projectlombok.version>1.18.36</org.projectlombok.version>
-        <core-service-version>0.0.5-SNAPSHOT</core-service-version>
+        <core-service-version>0.0.7-SNAPSHOT</core-service-version>
     </properties>
     <repositories>
         <repository>
-            <id>github-s01-core-service</id>
+            <id>github</id>
             <url>
                 https://maven.pkg.github.com/creatorsventure/s01-core-service
             </url>

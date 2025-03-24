@@ -21,13 +21,13 @@ import java.util.List;
 @SuperBuilder
 @ToString(callSuper = true)
 @Entity
-public class MenuOwner extends GenericEntity implements Serializable {
+public class Service extends GenericEntity implements Serializable {
 
     @NotBlank(message = "${app.code.002}")
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Column(unique = true)
-    private String ownerCode;
+    private String serviceCode;
 
     @OneToMany(mappedBy = "menuOwner")
     private List<Menu> menuList = new ArrayList<>(0);

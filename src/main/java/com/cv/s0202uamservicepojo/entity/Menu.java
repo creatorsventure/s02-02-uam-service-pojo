@@ -58,9 +58,9 @@ public class Menu extends GenericEntity implements Serializable {
     private Integer menuType;
 
     @NotNull(message = "${app.code.003}")
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "menu_owner_id", referencedColumnName = "id")
-    private MenuOwner menuOwner;
+    @ManyToOne
+    @JoinColumn(name = "service_id", referencedColumnName = "id")
+    private Service service;
 
     @ManyToMany(mappedBy = "menuList")
     private List<Role> roleList = new ArrayList<>(0);
