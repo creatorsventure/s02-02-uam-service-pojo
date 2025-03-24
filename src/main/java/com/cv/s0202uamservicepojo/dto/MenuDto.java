@@ -50,7 +50,7 @@ public class MenuDto extends GenericDto implements Comparable<MenuDto>, Serializ
     private Integer menuType;
 
     @NotNull(message = "{app.code.003}")
-    private String serviceId;
+    private String moduleId;
 
     private List<RoleDto> roleList = new ArrayList<>(0);
 

@@ -19,8 +19,8 @@ import java.util.List;
 public class Role extends GenericEntity implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "service_id", referencedColumnName = "id")
-    private Service service;
+    @JoinColumn(name = "module_id", referencedColumnName = "id")
+    private Module module;
 
     @ManyToMany
     @JoinTable(name = "role_permission_mapping",
