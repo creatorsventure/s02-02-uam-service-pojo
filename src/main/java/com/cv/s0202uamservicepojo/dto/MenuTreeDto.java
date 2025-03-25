@@ -18,4 +18,6 @@ public class MenuTreeDto {
     private boolean expanded;
     private List<MenuTreeDto> children;
     private boolean isLeaf;
+    private boolean checked;
+    private boolean selected;
 }

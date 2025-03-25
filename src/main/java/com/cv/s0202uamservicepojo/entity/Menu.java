@@ -9,6 +9,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -63,6 +64,6 @@ public class Menu extends GenericEntity implements Serializable {
 
     @ManyToMany(mappedBy = "menuList")
     @ToString.Exclude
-    private List<Role> roleList;
+    private List<Role> roleList = new ArrayList<>(0);
 
 }
