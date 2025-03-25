@@ -11,7 +11,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -30,6 +29,7 @@ public class Permission extends GenericEntity implements Serializable {
     private String permissionCode;
 
     @ManyToMany(mappedBy = "permissionList")
-    private List<Role> roleList = new ArrayList<>(0);
+    @ToString.Exclude
+    private List<Role> roleList;
 
 }

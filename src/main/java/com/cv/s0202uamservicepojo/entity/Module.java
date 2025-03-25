@@ -11,7 +11,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -30,9 +29,11 @@ public class Module extends GenericEntity implements Serializable {
     private String moduleCode;
 
     @OneToMany(mappedBy = "module")
-    private List<Menu> menuList = new ArrayList<>(0);
+    @ToString.Exclude
+    private List<Menu> menuList;
 
     @OneToMany(mappedBy = "module")
+    @ToString.Exclude
     private List<Role> roleList;
 
 

@@ -4,6 +4,7 @@ import com.cv.s01coreservice.annotation.ValidMobileNumber;
 import com.cv.s01coreservice.entity.generic.GenericEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -45,6 +46,6 @@ public class UserDetail extends GenericEntity implements Serializable {
     @Column
     private LocalDateTime lastLogin;
 
-    @OneToOne(mappedBy = "userDetail")
+    @OneToOne(mappedBy = "userDetail", fetch = FetchType.EAGER)
     private Password password;
 }

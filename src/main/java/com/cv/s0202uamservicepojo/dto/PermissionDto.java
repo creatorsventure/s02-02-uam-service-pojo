@@ -9,8 +9,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -24,7 +22,5 @@ public class PermissionDto extends GenericDto implements Serializable {
     @NotNull(message = "${app.code.003}")
     @Size(min = 3, max = 250, message = "${app.code.005}")
     private String permissionCode;
-
-    private List<RoleDto> roleDtoList = new ArrayList<>(0);
 
 }

@@ -52,8 +52,6 @@ public class MenuDto extends GenericDto implements Comparable<MenuDto>, Serializ
     @NotNull(message = "{app.code.003}")
     private String moduleId;
 
-    private List<RoleDto> roleList = new ArrayList<>(0);
-
     @JsonProperty("submenu")
     private List<MenuDto> subMenuList = new ArrayList<>(0);
 

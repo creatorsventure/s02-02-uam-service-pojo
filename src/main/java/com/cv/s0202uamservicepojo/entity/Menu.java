@@ -9,7 +9,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -58,11 +57,12 @@ public class Menu extends GenericEntity implements Serializable {
     private Integer menuType;
 
     @NotNull(message = "${app.code.003}")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "module_id", referencedColumnName = "id")
     private Module module;
 
     @ManyToMany(mappedBy = "menuList")
-    private List<Role> roleList = new ArrayList<>(0);
+    @ToString.Exclude
+    private List<Role> roleList;
 
 }

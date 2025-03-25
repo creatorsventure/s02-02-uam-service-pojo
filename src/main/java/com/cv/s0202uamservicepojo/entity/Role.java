@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -27,14 +26,16 @@ public class Role extends GenericEntity implements Serializable {
             joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "permission_id", referencedColumnName = "id")
     )
-    private List<Permission> permissionList = new ArrayList<>(0);
+    @ToString.Exclude
+    private List<Permission> permissionList;
 
     @ManyToMany
     @JoinTable(name = "role_menu_mapping",
             joinColumns = @JoinColumn(name = "menu_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
-    private List<Menu> menuList = new ArrayList<>(0);
+    @ToString.Exclude
+    private List<Menu> menuList;
 
 
 }
