@@ -2,9 +2,7 @@ package com.cv.s0202uamservicepojo.entity;
 
 import com.cv.s01coreservice.annotation.ValidMobileNumber;
 import com.cv.s01coreservice.entity.generic.GenericEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -45,6 +43,8 @@ public class UserDetail extends GenericEntity implements Serializable {
     @Column
     private LocalDateTime lastLogin;
 
-    @OneToOne(mappedBy = "userDetail")
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "password_id", unique = true)
     private Password password;
+
 }

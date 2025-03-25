@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.cv</groupId>
     <artifactId>s02-02-uam-service-pojo</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.27-SNAPSHOT</version>
     <name>s02-02-uam-service-pojo</name>
     <description>s02-02-uam-service-pojo</description>
     <url/>
@@ -44,7 +44,7 @@
     </repositories>
     <distributionManagement>
         <repository>
-            <id>github</id>
+            <id>github-s02-02-uam-service-pojo</id>
             <name>${project.name} Maven Packages</name>
             <url>https://maven.pkg.github.com/creatorsventure/s02-02-uam-service-pojo</url>
         </repository>
